@@ -2,19 +2,32 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"net/http"
 )
 
 func main() {
 
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(":8000", nil)
+	http.ListenAndServe(":80", nil)
+
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, greeting("Code.education Rocks!"))
+
+	z := 0
+	y := 16.0
+
+	for z < 100000 {
+
+		y += executando(y)
+		z++
+	}
+
+	fmt.Fprintf(w, "Done!")
 }
 
-func greeting(parametro string) string {
-	return "<b>" + parametro + "</b>"
+func executando(x float64) float64 {
+
+	return math.Sqrt(x)
 }

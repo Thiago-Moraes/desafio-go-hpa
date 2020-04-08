@@ -2,11 +2,11 @@ package main
 
 import "testing"
 
-func TestGreeting(t *testing.T) {
+func TestMain(t *testing.T) {
 
-	x := greeting("Code.education Rocks!")
+	x := executando(16.0)
 
-	if x != "<b>Code.education Rocks!</b>" {
-		t.Error("O parametro enviado é inválido")
+	if x != 4 {
+		t.Error("Erro!")
 	}
 }
