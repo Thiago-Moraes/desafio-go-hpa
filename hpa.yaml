@@ -7,7 +7,6 @@ spec:
     maxReplicas: 6
     targetCPUUtilizationPercentage: 15
     scaleTargetRef:
-        # apiVersion: app/v1
         apiVersion: extensions/v1
         kind: Deployment
         name: go-hpa
